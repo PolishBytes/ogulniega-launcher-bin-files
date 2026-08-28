@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.ogulniega.launcher</id>
+  
+  <name>Ogulniega Minecraft</name>
+  <summary>Launcher for Ogulniega Client</summary>
+  
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Proprietary</project_license>
+  <url type="homepage">https://ogulniega.com</url>
+  
+  <categories>
+    <category>Game</category>
+  </categories>
+  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+    <control>gamepad</control>
+    <control>tablet</control>
+  </supports>
+  
+  <description>
+    <p>
+      The best free Minecraft launcher with a built-in optimization modpack.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">com.ogulniega.launcher.desktop</launchable>
+</component>

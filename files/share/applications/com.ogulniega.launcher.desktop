@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=
+Comment=Ogulniega Minecraft
+Exec=ogulniega
+StartupWMClass="Ogulniega Minecraft"
+Icon=com.ogulniega.launcher
+Name=Ogulniega Minecraft
+Terminal=false
+Type=Application

@@ -9,27 +9,35 @@ The included `PKGBUILD` is a temporary solution until the package can be publish
 
 ## Installation
 
-Clone the repository:
+Create a directory and download only the `PKGBUILD`:
 
 ```bash
-git clone https://github.com/PolishBytes/ogulniega-launcher-bin-files
-cd ogulniega-launcher-bin-files
+mkdir ogulniega
+cd ogulniega
+curl -O https://raw.githubusercontent.com/PolishBytes/ogulniega-launcher-bin-files/main/PKGBUILD
 ```
 
-Build and install the package:
+Then build and install the package:
 
 ```bash
 makepkg -si
+```
+
+### Or do everything in one command
+
+```bash
+mkdir -p ogulniega && cd ogulniega && curl -O https://raw.githubusercontent.com/PolishBytes/ogulniega-launcher-bin-files/main/PKGBUILD && makepkg -si
 ```
 
 That's it. The launcher should now be available as `ogulniega` and appear in your application menu.
 
 ## Updating
 
-To get the latest packaged launcher files:
+To update the package, download the latest `PKGBUILD` and rebuild it:
 
 ```bash
-git pull
+cd ogulniega
+curl -O https://raw.githubusercontent.com/PolishBytes/ogulniega-launcher-bin-files/main/PKGBUILD
 makepkg -si
 ```
 

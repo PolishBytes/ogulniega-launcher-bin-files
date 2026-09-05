@@ -1,20 +1,27 @@
-pkgname=ogulniega
-pkgver=0.11
+pkgname=ogulniega-git
+pkgver=1
 pkgrel=1
 pkgdesc="Ogulniega Minecraft launcher"
 arch=('x86_64')
 url="https://github.com/PolishBytes/ogulniega-launcher-bin-files"
-license=('LicenseRef-Proprietary')
 
 depends=('gtk3' 'webkit2gtk-4.1' 'libsoup3')
+makedepends=('git')
 options=('!strip')
 
-_commit='f5532642b59fcc941b55be11524545f351554623'
-source=("${url}/archive/${_commit}.tar.gz")
-sha256sums=('88261216bc36b20d51aa7b808ea089a7d581f877b7210077d6d5e65a691a49a0')
+provides=('ogulniega')
+conflicts=('ogulniega')
+
+source=("git+${url}.git")
+sha256sums=('SKIP')
+
+pkgver() {
+    cd ogulniega-launcher-bin-files
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
 
 package() {
-    cd "$srcdir/ogulniega-launcher-bin-files-${_commit}"
+    cd "$srcdir/ogulniega-launcher-bin-files"
 
     install -Dm755 files/bin/ogulniega "$pkgdir/usr/bin/ogulniega"
     cp -dr --no-preserve=ownership files/share "$pkgdir/usr/"
